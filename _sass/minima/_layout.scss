@@ -1,8 +1,3 @@
-.wrapper {
-  max-width: 1120px;
-  margin: $spacing-unit / 2 auto 0 ;
-}
-
 .wrapper, nav, section.description, nav aside, .consortium, .container section, footer ul {
   display: flex;
   justify-content: space-between;
@@ -11,8 +6,27 @@
   width: 100%;
 }
 
-nav a, nav aside, footer ul li, .consortium li {
+nav a, nav aside, footer ul li {
   flex: 1;
+}
+
+.wrapper {
+  max-width: 1120px;
+  width: calc(100% - #{$spacing-unit});
+  margin: $spacing-unit / 2 $spacing-unit / 2 0;
+  padding: 0;
+}
+
+@include media-query($on-palm) {
+  .wrapper {
+    margin: $spacing-unit / 2 auto 0;
+  }
+}
+
+@include media-query($on-laptop) {
+  .wrapper {
+    margin: $spacing-unit / 2 auto 0;
+  }
 }
 
 nav aside {
@@ -25,11 +39,10 @@ nav aside {
 }
 
 section.description {
-  height: 70vh;
   align-items: center;
   justify-content: center;
-  width: 80vw;
-  margin: 0 10vw;
+  margin: $spacing-unit 0;
+  width: 100vw;
 
   h2 {
     margin-bottom: $spacing-unit;
@@ -37,58 +50,123 @@ section.description {
 
   .consortium {
     width: 100%;
-    margin: 2 * $spacing-unit auto 0;
-    text-align: center;
+    margin: $spacing-unit auto 0;
     display: flex;
+    justify-content: space-around;
 
     li {
       text-align: center;
-      padding: 0 $spacing-unit / 2;
+      padding: $spacing-unit 0;
       height: 100%;
+      width: 28%;
 
-      figure {
-        text-align: center;
-
-        figcaption {
-          margin-top: $spacing-unit / 2;
-        }
+      figcaption {
+        margin-top: $spacing-unit / 2;
       }
     }
+  }
+
+  @include media-query($on-palm) {
+    .consortium {
+      margin: 2 * $spacing-unit auto 0;
+
+      li {
+        flex: 1;
+        padding: $spacing-unit $spacing-unit / 2;
+      }
+    }
+  }
+
+  @include media-query($on-laptop) {
+    .consortium {
+      margin: 2 * $spacing-unit auto 0;
+
+      li {
+        flex: 1;
+        padding: $spacing-unit $spacing-unit / 2;
+      }
+    }
+  }
+}
+
+@include media-query($on-palm) {
+  section.description {
+    height: 70vh;
+    width: 80vw;
+    margin: 0 10vw;
+  }
+}
+
+@include media-query($on-laptop) {
+  section.description {
+    height: 70vh;
+    width: 80vw;
+    margin: 0 10vw;
   }
 }
 
 .container {
   padding: $spacing-unit 0;
 
-  section {
-    border-bottom: 1px solid #fff;
-    padding-bottom: $spacing-unit;
-    padding-top: $spacing-unit;
+  article {
+    margin-bottom: $spacing-unit;
 
-    &:last-of-type {
-      border-bottom: 0;
+    section {
+      border-bottom: 1px solid #fff;
+      padding: $spacing-unit 0;
+
+      &:last-of-type {
+        border-bottom: 0;
+      }
+
+      @include media-query($on-palm) {
+        h1, p {
+          width: 100%;
+        }
+      }
+
+      @include media-query($on-laptop) {
+        h4 {
+          flex: 1;
+        }
+
+        p {
+          flex: 2;
+          padding: 0 $spacing-unit;
+        }
+      }
     }
+  }
 
-    h4 {
-      flex: 1;
+  @include media-query($on-palm) {
+    article {
+      margin-bottom: 2 * $spacing-unit;
     }
+  }
 
-    p {
-      flex: 2;
-      padding: 0 $spacing-unit;
-      font-size: 1.1em;
+  @include media-query($on-laptop) {
+    article {
+      margin-bottom: 2 * $spacing-unit;
     }
   }
 }
 
-article {
-  margin-bottom: 2 * $spacing-unit;
-}
-
 footer {
-  padding: 2 * $spacing-unit 0;
+  padding: $spacing-unit 0;
 
   ul {
     margin-top: $spacing-unit;
+  }
+}
+
+@include media-query($on-palm) {
+  footer {
+    padding: 2 * $spacing-unit 0;
+  }
+}
+
+@include media-query($on-laptop) {
+  footer {
+    padding: 2 * $spacing-unit 0;
   }
 }

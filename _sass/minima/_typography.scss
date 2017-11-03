@@ -34,16 +34,24 @@ h4 {
 nav aside {
   font-size: 0.85em;
   letter-spacing: 0.02em;
-  color: #34495e;
+
+  a {
+    color: #34495e;
+
+    &:hover, &:focus {
+      color: #222;
+    }
+  }
 }
 
-.caption {
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-size: 0.7em;
-  display: block;
-  width: 100%;
-  color: #FBB829;
+.consortium {
+  text-align: center;
+
+  a:hover, a:focus {
+    figcaption {
+      color: #2c3e50;
+    }
+  }
 }
 
 figcaption {
@@ -52,9 +60,19 @@ figcaption {
   line-height: 1.2em;
 }
 
+.caption {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  display: block;
+  width: 100%;
+  color: #FBB829;
+}
+
 p {
   color: #34495e;
   font-weight: 300;
+  font-size: 1.1em;
 
   i {
     font-style: italic;

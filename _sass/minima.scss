@@ -49,6 +49,15 @@ $brand-color:      #2a7ae2 !default;
 //   "minima/syntax-highlighting"
 // ;
 
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
+
+@mixin media-query($device) {
+  @media screen and (min-width: $device) {
+    @content;
+  }
+}
+
 // Import partials.
 @import
   "normalize",
@@ -74,3 +83,24 @@ header {
 .container {
   background-color: #f7f7f7;
 }
+
+.mobile-invisible {
+	visibility: hidden;
+  clear: both;
+  display: none;
+}
+
+@include media-query($on-palm) {
+  .mobile-invisible {
+  	visibility: visible;
+    display: inherit;
+  }
+}
+
+// @include media-query($on-laptop) {
+//   .mobile-invisible {
+//   	visibility: hidden;
+//     clear: both;
+//     display: none;
+//   }
+// }
