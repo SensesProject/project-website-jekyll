@@ -117,8 +117,16 @@ section.description {
         border-bottom: 0;
       }
 
+      p {
+        margin-bottom: $spacing-unit;
+
+        p:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+
       @include media-query($on-palm) {
-        h1, p {
+        h1, p, div {
           width: 100%;
         }
       }
@@ -128,7 +136,7 @@ section.description {
           flex: 1;
         }
 
-        p {
+        p, div {
           flex: 2;
           padding: 0 $spacing-unit;
         }

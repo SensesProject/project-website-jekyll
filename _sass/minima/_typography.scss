@@ -7,15 +7,15 @@ h1, h2, h4 {
   font-family: $font-family-alternative;
 }
 
-h2 {
-  font-weight: light;
-  font-size: 2em;
-  line-height: 1.4em;
-}
-
 h1 strong {
   text-transform: uppercase;
   letter-spacing: 0.2em;
+}
+
+h2 {
+  font-weight: light;
+  font-size: 1.2em;
+  line-height: 1.4em;
 }
 
 h3 {
@@ -29,6 +29,18 @@ h4 {
   font-weight: normal;
   padding-bottom: 1em;
   padding-right: 2em;
+}
+
+@include media-query($on-palm) {
+  h2 {
+    font-size: 1.6em;
+  }
+}
+
+@include media-query($on-laptop) {
+  h2 {
+    font-size: 2em;
+  }
 }
 
 nav aside {
@@ -55,7 +67,7 @@ nav aside {
 }
 
 figcaption {
-  color: #999999;
+  color: #999;
   font-size: 0.7em;
   line-height: 1.2em;
 }
