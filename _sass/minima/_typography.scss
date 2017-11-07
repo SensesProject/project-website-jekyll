@@ -1,4 +1,4 @@
-h1, h2, h3, h4 {
+h1, h2, h3, h4, ul {
   font-weight: 300;
   color: #2c3e50;
 }
@@ -10,6 +10,7 @@ h1, h2, h4 {
 h1 strong {
   text-transform: uppercase;
   letter-spacing: 0.2em;
+  font-weight: normal; // Quite bold
 }
 
 h2 {
@@ -18,15 +19,30 @@ h2 {
   line-height: 1.4em;
 }
 
-h3 {
-  font-size: 1em;
+.introduction {
+  p {
+    font-size: 1em;
+    color: #34495e;
+  }
+
+  li {
+    list-style-position: outside;
+    padding-left: $spacing-unit;
+    text-indent: -1em;
+  }
+
+  li:before {
+      content: "– ";
+      color: #FBB829;
+      margin-right: 0.2em;
+  }
 }
 
 h4 {
   line-height: 1.2em;
   font-size: 1.8em;
   margin: 0;
-  font-weight: normal;
+  font-weight: normal; // Quite bold
   padding-bottom: 1em;
   padding-right: 2em;
 }
@@ -50,9 +66,85 @@ nav aside {
   a {
     color: #34495e;
 
+    &:visited {
+      color: #34495e;
+    }
+
     &:hover, &:focus {
       color: #222;
     }
+  }
+}
+
+.button, .email {
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin: 0;
+  zoom: 1;
+  border: 0;
+  width: 50%;
+  display: inline-block;
+  background-color: transparent;
+}
+
+// .button {
+//   background-color: #FBB829;
+//   border-radius: 2px;
+//   border: 1px solid darken(#FBB829, 2%);
+//   color: rgba(255, 255, 255, .95);
+//   cursor: pointer;
+//   letter-spacing: 0.03em;
+//   padding: $spacing-unit / 3 $spacing-unit;
+//   text-align: center;
+//   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+//   text-transform: uppercase;
+//   width: 30%;
+
+//   &:hover {
+//     color: #fff;
+//     background-image: linear-gradient(transparent,darken(#FBB829, 2%) 40%,darken(#FBB829, 4%));
+//     border: 1px solid darken(#FBB829, 4%);
+//   }
+// }
+
+.button {
+  color: #34495e;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  padding: $spacing-unit / 3 0;
+  text-align: center;
+  width: 30%;
+
+  &:hover {
+    color: #fff;
+    background-color: #FBB829;
+  }
+}
+
+.email {
+  margin: 0;
+  color: #222;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  padding: $spacing-unit / 3 $spacing-unit / 3;
+  text-align: left;
+
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgba(0, 0, 0, 0.3);
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: rgba(0, 0, 0, 0.3);
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: rgba(0, 0, 0, 0.3);
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  &.mce_inline_error {
+    color: #C3272B;
   }
 }
 
@@ -81,22 +173,48 @@ figcaption {
   color: #FBB829;
 }
 
-p {
-  color: #34495e;
-  font-weight: 300;
-  font-size: 1.1em;
+article {
+  p, blockquote {
+    color: #34495e;
+    font-weight: 300;
+    font-size: 1em;
+    hyphens: auto;
 
-  i {
+    sup {
+      color: darken(#FBB829, 10%);
+      padding: 0 0.5em;
+    }
+
+    i {
+      font-style: italic;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    a {
+      color: #34495e;
+      border-bottom: 1px solid #FBB829;
+
+      &[href^='#'], &:not([href]) {
+        border-bottom: 0;
+      }
+
+      &:hover, &:focus {
+        color: #222;
+      }
+    }
+  }
+
+  blockquote {
     font-style: italic;
   }
 
-  a {
-    border-bottom: 1px solid #FBB829;
-    color: #34495e;
-  }
-
-  strong {
-    font-weight: normal;
+  @include media-query($on-laptop) {
+    p, quote {
+      text-align: justify;
+    }
   }
 }
 
@@ -104,4 +222,12 @@ footer {
   color: #34495e;
   font-weight: 300;
   font-size: 0.85em;
+
+  a {
+    color: #34495e;
+
+    &:hover, &:focus {
+      color: #222;
+    }
+  }
 }
