@@ -24,17 +24,25 @@ h2 {
     font-size: 1em;
     color: #34495e;
   }
+}
 
+.introduction, .container {
   li {
     list-style-position: outside;
     padding-left: $spacing-unit;
     text-indent: -1em;
-  }
 
-  li:before {
+    &:before {
       content: "– ";
       color: #FBB829;
       margin-right: 0.2em;
+    }
+  }
+}
+
+.container {
+  li {
+    margin-bottom: 1em;
   }
 }
 
@@ -76,7 +84,7 @@ nav aside {
   }
 }
 
-.button, .email {
+.button, input.email {
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
@@ -122,7 +130,7 @@ nav aside {
   }
 }
 
-.email {
+input.email {
   margin: 0;
   color: #222;
   font-weight: 300;
@@ -189,10 +197,6 @@ article {
       font-style: italic;
     }
 
-    strong {
-      font-weight: bold;
-    }
-
     a {
       color: #34495e;
       border-bottom: 1px solid #FBB829;
@@ -205,6 +209,10 @@ article {
         color: #222;
       }
     }
+  }
+
+  strong {
+    font-weight: bold;
   }
 
   blockquote {

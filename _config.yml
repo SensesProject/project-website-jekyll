@@ -18,9 +18,10 @@ email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   The goal of SENSES is to develop a Climate Change Scenario Toolkit. The Toolkit will be tailor-made and user determined connecting the new generation of climate community scenarios to decisive stakeholder groups.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.senses-project.org" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://senses-project.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
+lang: en
 
 # Build settings
 markdown: kramdown
