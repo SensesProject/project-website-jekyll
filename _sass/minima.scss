@@ -92,6 +92,11 @@ address {
   background-color: #f7f7f7;
 }
 
+.center {
+  text-align: center;
+  margin-top: $spacing-unit;
+}
+
 input:focus,
 select:focus,
 textarea:focus,

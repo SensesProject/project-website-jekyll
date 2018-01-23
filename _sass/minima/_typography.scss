@@ -130,6 +130,15 @@ nav aside {
   }
 }
 
+.button--active {
+  color: #fff;
+  background-color: #FBB829;
+
+  &:hover {
+    color: #34495e;
+  }
+}
+
 input.email {
   margin: 0;
   color: #222;

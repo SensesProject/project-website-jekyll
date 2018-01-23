@@ -72,16 +72,16 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: $brand-color;
+  color: #222;
   text-decoration: none;
 
   &:visited {
-    color: darken($brand-color, 15%);
+    color: darken(#222, 15%);
   }
 
   &:hover, &:focus {
     > p {
-      color: $text-color;
+      color: #000;
       text-decoration: underline;
     }
   }
