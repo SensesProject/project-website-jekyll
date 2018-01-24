@@ -25,7 +25,7 @@ lang: en
 
 # Build settings
 markdown: kramdown
-theme: minima
+
 sass:
   style: compressed
 
