@@ -26,7 +26,11 @@ h2 {
   }
 }
 
-.introduction, .container {
+p {
+  display: block;
+}
+
+.introduction {
   li {
     list-style-position: outside;
     padding-left: $spacing-unit;

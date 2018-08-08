@@ -1,4 +1,4 @@
-.wrapper, nav, section.description, nav aside, .consortium, .container section, footer ul {
+.wrapper, nav, section.description, nav aside, .consortium, .container > section, .column, footer ul {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -41,20 +41,19 @@ nav a, nav aside, footer ul li {
   }
 }
 
-nav aside {
-  align-items: center;
-  justify-content: flex-end;
+nav {
+  aside {
+    align-items: center;
+    justify-content: flex-end;
 
-  ul li {
-    margin-left: $spacing-unit / 4;
+    ul li {
+      margin-left: $spacing-unit / 4;
+    }
   }
 }
 
-section.description {
-  align-items: center;
+section {
   justify-content: center;
-  margin: $spacing-unit 0;
-  width: 100vw;
 
   h2 {
     margin-bottom: $spacing-unit;
@@ -106,15 +105,15 @@ section.description {
 }
 
 @include media-query($on-palm) {
-  section.description {
+  #intro {
     margin: $spacing-unit 5vw;
     width: 90vw;
   }
 }
 
 @include media-query($on-laptop) {
-  section.description {
-    margin: $spacing-unit * 4 10vw;
+  #intro {
+    margin: $spacing-unit * 2 10vw $spacing-unit;
     width: 80vw;
   }
 }
@@ -138,8 +137,8 @@ section.description {
 }
 
 .consortium {
-    margin: $spacing-unit auto $spacing-unit;
-  }
+  margin: $spacing-unit auto $spacing-unit;
+}
 
 @include media-query($on-palm) {
   .consortium, .funders {
@@ -152,7 +151,7 @@ section.description {
   }
 
   .consortium {
-    margin: $spacing-unit auto 3 * $spacing-unit;
+    margin: $spacing-unit auto $spacing-unit;
   }
 }
 
@@ -167,76 +166,60 @@ section.description {
   }
 
   .consortium {
-    margin: $spacing-unit auto 3 * $spacing-unit;
+    margin: $spacing-unit auto $spacing-unit;
   }
 }
 
 .container {
   padding: $spacing-unit 0;
 
-  article {
-    margin-bottom: $spacing-unit;
+  section {
+    border-bottom: 1px solid #f7f7f7;
+    padding: $spacing-unit 0;
 
-    section {
-      border-bottom: 1px solid #fff;
-      padding: $spacing-unit 0;
+    &:last-of-type {
+      border-bottom: 0;
+    }
 
-      &:last-of-type {
-        border-bottom: 0;
+    p {
+      margin-bottom: $spacing-unit / 2;
+
+      p:last-of-type {
+        margin-bottom: 0;
       }
+    }
 
-      p {
-        margin-bottom: $spacing-unit / 2;
+    blockquote {
+      margin-bottom: $spacing-unit / 2;
+    }
 
-        p:last-of-type {
-          margin-bottom: 0;
+    .aside {
+      img {
+        width: 25%;
+        padding-right: $spacing-unit * 2;
+        margin: $spacing-unit auto;
+
+        &.wide {
+          width: 55%;
         }
       }
+    }
 
-      blockquote {
-        margin-bottom: $spacing-unit / 2;
+    @include media-query($on-palm) {
+      h1, div {
+        width: 100%;
       }
+    }
 
+    @include media-query($on-laptop) {
       .aside {
-        img {
-          width: 25%;
-          padding-right: $spacing-unit * 2;
-          margin: $spacing-unit auto;
-
-          &.wide {
-            width: 55%;
-          }
-        }
+        flex: 1.2;
       }
 
-      @include media-query($on-palm) {
-        h1, div {
-          width: 100%;
-        }
+      .content {
+        flex: 2;
+        padding: 0 $spacing-unit;
       }
-
-      @include media-query($on-laptop) {
-        .aside {
-          flex: 1.2;
-        }
-
-        .content {
-          flex: 2;
-          padding: 0 $spacing-unit;
-        }
-      }
-    }
-  }
-
-  @include media-query($on-palm) {
-    article {
-      margin-bottom: 2 * $spacing-unit;
-    }
-  }
-
-  @include media-query($on-laptop) {
-    article {
-      margin-bottom: 2 * $spacing-unit;
     }
   }
 }

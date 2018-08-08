@@ -35,27 +35,37 @@ input {
 	font-family: $font-family-default;
 }
 
-header {
+.page-header {
   background-color: #fcfcfc;
   font-weight: 300;
+  padding-top: $spacing-unit;
+  padding-bottom: $spacing-unit;
 
   a {
     color: $text-color;
   }
+
+  .wrapper {
+    margin-top: 0;
+  }
+}
+
+.page-footer {
+  background-color: #fcfcfc;
 }
 
 address {
 	font-style: inherit;
 }
 
-.container {
-  background-color: #f7f7f7;
-}
+// .container {
+//   background-color: #f7f7f7;
+// }
 
-.center {
-  text-align: center;
-  margin-top: $spacing-unit;
-}
+// .center {
+//   text-align: center;
+//   margin-top: $spacing-unit;
+// }
 
 input:focus,
 select:focus,
@@ -87,8 +97,6 @@ dl, dd, ol, ul, figure {
   padding: 0;
 }
 
-
-
 /**
  * Basic styling
  */
@@ -101,8 +109,6 @@ body {
   font-kerning: normal;
 }
 
-
-
 /**
  * Images
  */
@@ -111,15 +117,12 @@ img {
   vertical-align: middle;
 }
 
-
-
 /**
  * Figures
  */
 figure > img {
   display: block;
 }
-
 
 ul, ol {
   list-style: none;
@@ -137,15 +140,12 @@ nav li, nav ol {
   display: inline-block;
 }
 
-
 /**
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
 }
-
-
 
 /**
  * Links
@@ -165,4 +165,3 @@ a {
     }
   }
 }
-
