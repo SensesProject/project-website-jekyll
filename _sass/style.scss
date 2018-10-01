@@ -165,3 +165,30 @@ a {
     }
   }
 }
+
+.message {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  border: 1px solid #b7005e !important;
+  border-radius: 2px;
+  padding: 2rem !important;
+}
+
+.btn {
+  font-size: 1.3rem;
+  padding: .6rem 1rem;
+  border: 1px solid #b7005e;
+  background-color: #b7005e;
+  color: #fff !important;
+  font-family: IBM Plex Mono,monospace;
+  -webkit-transition: .3s;
+  transition: .3s;
+  font-weight: 600;
+  margin: 1rem 0 0;
+  display: inline-block;
+
+  &:hover, &:focus {
+    background-color: #fff;
+    color: #b7005e !important;
+  }
+}
