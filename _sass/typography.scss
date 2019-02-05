@@ -59,6 +59,11 @@ h4 {
   padding-right: 2em;
 }
 
+h5 {
+  color: #aaa;
+  font-weight: $font-weight-default !important;
+}
+
 @include media-query($on-palm) {
   h2 {
     font-size: 1.6em;
@@ -83,7 +88,11 @@ nav aside {
     }
 
     &:hover, &:focus {
-      color: #222;
+      color: #000;
+    }
+
+    &.active {
+      border-bottom: 1px solid #34495e;
     }
   }
 }
@@ -194,6 +203,15 @@ figcaption {
   color: #FBB829;
 }
 
+strong {
+  font-weight: bold;
+}
+
+p a {
+  color: #000;
+  border-bottom: 1px solid #FBB829;
+}
+
 article {
   p, blockquote {
     color: #34495e;
@@ -222,10 +240,6 @@ article {
         color: #222;
       }
     }
-  }
-
-  strong {
-    font-weight: bold;
   }
 
   blockquote {

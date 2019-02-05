@@ -6,9 +6,11 @@
       </a>
       <aside role="navigation">
         <ul>
-          <li><a href="{{ site.url }}">About the Project</a></li>
-          <li><a href="{{ site.url }}/stakeholders">The Stakeholders</a></li>
-          <li><a href="{{ site.url }}/imprint">Imprint and Privacy</a></li>
+          <li><a href="{{ site.url }}" class="{% if page.url == '/' %}active{% endif %}">About</a></li>
+          <li><a href="{{ site.url }}/stakeholders" class="{% if page.url == '/stakeholders/' %}active{% endif %}">Stakeholders</a></li>
+          <li><a href="{{ site.url }}/events" class="{% if page.url == '/events/' %}active{% endif %}">Events</a></li>
+          <li><a href="{{ site.url }}/results" class="{% if page.url == '/results/' %}active{% endif %}">Results and Outreach</a></li>
+          <li><a href="{{ site.url }}/imprint" class="{% if page.url == '/imprint/' %}active{% endif %}">Imprint and Privacy</a></li>
         </ul>
       </aside>
     </nav>
