@@ -1,5 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://senses-project.netlify.com/* https://senses-project.org/:splat 301!
-
-# These extra rules are required because HTTPS is not forced
-http://senses-project.netlify.com/* https://senses-project.org/:splat 301!

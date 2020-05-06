@@ -17,41 +17,19 @@ html {
   -webkit-font-smoothing: antialiased;
   font-weight: $font-weight-default;
   font-kerning: normal;
-  color: $text-color;
+  color: $color-default;
+  background-color: $color-background-primary;
 }
 
 input {
 	font-family: $font-family-default;
 }
 
-.page-header {
-  background-color: #fcfcfc;
-  font-weight: 300;
-  padding-top: $spacing-unit;
-  padding-bottom: $spacing-unit;
-
-  a {
-    color: $text-color;
-  }
-
-  .wrapper {
-    margin-top: 0;
-  }
-}
-
-.page-footer {
-  background-color: #fcfcfc;
-}
-
-address {
-	font-style: inherit;
-}
-
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 .mobile-invisible {
@@ -60,7 +38,7 @@ button:focus {
   display: none;
 }
 
-@include media-query($on-palm) {
+@include media-query($narrow) {
   .mobile-invisible {
   	visibility: visible;
     display: inherit;
@@ -97,16 +75,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: #222;
+  color: $color-default;
   text-decoration: none;
-
-  &:visited {
-    color: darken(#222, 15%);
-  }
 
   &:hover, &:focus {
     > p {
-      color: #000;
+      color: darken($color-default, 15%);
       text-decoration: underline;
     }
   }
