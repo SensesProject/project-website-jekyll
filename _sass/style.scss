@@ -1,32 +1,9 @@
 @charset "utf-8";
 
-$font-sans: "IBM Plex Sans", "Helvetica Neue", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", Helvetica, sans-serif !default;
-
-$font-family-default: $font-sans;
-$font-family-alternative: $font-sans;
-
-$font-weight-default: 400 !default;
-$font-weight-bold: 700 !default;
-
-$base-line-height: 1.7 !default;
-
-$spacing-unit:     2rem !default;
-
-$text-color:       #222 !default;
-$brand-color:      #2a7ae2 !default;
-
-$on-palm:          600px !default;
-$on-laptop:        800px !default;
-
-@mixin media-query($device) {
-  @media screen and (min-width: $device) {
-    @content;
-  }
-}
-
-// Import partials.
 @import
   "normalize",
+  "variables",
+  "mixins",
   "typography",
   "layout",
   "fonts"
@@ -34,8 +11,13 @@ $on-laptop:        800px !default;
 
 html {
   font: normal normal 105%/1.7 $font-family-default;
-  color: $text-color;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-weight: $font-weight-default;
+  font-kerning: normal;
+  color: $text-color;
 }
 
 input {
@@ -65,15 +47,6 @@ address {
 	font-style: inherit;
 }
 
-// .container {
-//   background-color: #f7f7f7;
-// }
-
-// .center {
-//   text-align: center;
-//   margin-top: $spacing-unit;
-// }
-
 input:focus,
 select:focus,
 textarea:focus,
@@ -94,39 +67,11 @@ button:focus {
   }
 }
 
-/**
- * Reset some basic elements
- */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
-  margin: 0;
-  padding: 0;
-}
-
-/**
- * Basic styling
- */
-body {
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-feature-settings: "kern" 1;
-     -moz-font-feature-settings: "kern" 1;
-       -o-font-feature-settings: "kern" 1;
-          font-feature-settings: "kern" 1;
-  font-kerning: normal;
-}
-
-/**
- * Images
- */
 img {
   max-width: 100%;
   vertical-align: middle;
 }
 
-/**
- * Figures
- */
 figure > img {
   display: block;
 }
@@ -147,16 +92,10 @@ nav li, nav ol {
   display: inline-block;
 }
 
-/**
- * Headings
- */
 h1, h2, h3, h4, h5, h6 {
   font-weight: $font-weight-bold;
 }
 
-/**
- * Links
- */
 a {
   color: #222;
   text-decoration: none;
@@ -170,32 +109,5 @@ a {
       color: #000;
       text-decoration: underline;
     }
-  }
-}
-
-.message {
-  margin-top: 0;
-  margin-bottom: 2rem;
-  border: 1px solid #b7005e !important;
-  border-radius: 2px;
-  padding: 2rem !important;
-}
-
-.btn {
-  font-size: 1.3rem;
-  padding: .6rem 1rem;
-  border: 1px solid #b7005e;
-  background-color: #b7005e;
-  color: #fff !important;
-  font-family: "IBM Plex Mono", monospace;
-  -webkit-transition: .3s;
-  transition: .3s;
-  font-weight: 600;
-  margin: 1rem 0 0;
-  display: inline-block;
-
-  &:hover, &:focus {
-    background-color: #fff;
-    color: #b7005e !important;
   }
 }
